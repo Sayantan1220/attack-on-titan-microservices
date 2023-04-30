@@ -5,14 +5,14 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-@Getter
 @Setter
-@NoArgsConstructor
+@Getter
 @AllArgsConstructor
-public class AotDto {
+@NoArgsConstructor
+public class MilitaryDto {
 
     private int id;
-    private String firstName;
-    private String lastName;
+    private String militaryName;
+    private String militaryDescription;
     private String militaryCode;
 }

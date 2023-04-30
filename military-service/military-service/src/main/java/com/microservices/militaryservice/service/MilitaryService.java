@@ -6,6 +6,6 @@ public interface MilitaryService {
 
     MilitaryDto saveMilitary(MilitaryDto militaryDto);
 
-    MilitaryDto getMilitary(int id);
+    MilitaryDto getMilitary(String code);
 
 }

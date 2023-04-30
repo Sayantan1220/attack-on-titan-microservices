@@ -21,5 +21,6 @@ public class Aot {
     private String firstName;
     @Column(nullable = false)
     private String lastName;
+    private String militaryCode;
 }
 

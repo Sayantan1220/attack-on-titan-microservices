@@ -9,10 +9,8 @@ import lombok.Setter;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-public class AotDto {
+public class APIResponseDto {
 
-    private int id;
-    private String firstName;
-    private String lastName;
-    private String militaryCode;
+    private AotDto aotDto;
+    private MilitaryDto militaryDto;
 }

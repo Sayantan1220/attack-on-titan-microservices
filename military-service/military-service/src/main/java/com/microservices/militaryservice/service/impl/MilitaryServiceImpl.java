@@ -23,8 +23,8 @@ public class MilitaryServiceImpl implements MilitaryService {
     }
 
     @Override
-    public MilitaryDto getMilitary(int id) {
-        Military military = militaryRepository.findById(id).get();
+    public MilitaryDto getMilitary(String militaryCode) {
+        Military military = militaryRepository.findByMilitaryCode(militaryCode);
         return modelMapper.map(military, MilitaryDto.class);
     }
 }

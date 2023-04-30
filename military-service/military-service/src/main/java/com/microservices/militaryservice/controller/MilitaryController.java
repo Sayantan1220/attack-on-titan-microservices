@@ -19,8 +19,8 @@ public class MilitaryController {
         return new ResponseEntity<>(militaryService.saveMilitary(militaryDto), HttpStatus.CREATED);
     }
 
-    @GetMapping("/getMilitary/{id}")
-    public ResponseEntity<MilitaryDto> getMilitary(@PathVariable int id){
-        return new ResponseEntity<>(militaryService.getMilitary(id), HttpStatus.OK);
+    @GetMapping("/getMilitary/{militaryCode}")
+    public ResponseEntity<MilitaryDto> getMilitary(@PathVariable String militaryCode){
+        return new ResponseEntity<>(militaryService.getMilitary(militaryCode), HttpStatus.OK);
     }
 }
