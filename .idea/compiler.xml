@@ -9,6 +9,7 @@
         <outputRelativeToContentRoot value="true" />
         <module name="api-gateway" />
         <module name="military-service" />
+        <module name="config-server" />
         <module name="aot-service" />
         <module name="service-registry" />
       </profile>
@@ -18,6 +19,7 @@
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="aot-service" options="-parameters" />
       <module name="api-gateway" options="-parameters" />
+      <module name="config-server" options="-parameters" />
       <module name="military-service" options="-parameters" />
       <module name="service-registry" options="-parameters" />
     </option>
