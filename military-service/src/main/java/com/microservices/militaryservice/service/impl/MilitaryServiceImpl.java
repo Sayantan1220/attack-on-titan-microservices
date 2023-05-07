@@ -8,6 +8,9 @@ import lombok.AllArgsConstructor;
 import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @Service
 @AllArgsConstructor
 public class MilitaryServiceImpl implements MilitaryService {
@@ -26,5 +29,15 @@ public class MilitaryServiceImpl implements MilitaryService {
     public MilitaryDto getMilitary(String militaryCode) {
         Military military = militaryRepository.findByMilitaryCode(militaryCode);
         return modelMapper.map(military, MilitaryDto.class);
+    }
+
+    @Override
+    public List<MilitaryDto> getAllMilitary() {
+        List<Military> militaryList= militaryRepository.findAll();
+        List<MilitaryDto> militaryDtoList = new ArrayList<>();
+        for (Military military : militaryList){
+            militaryDtoList.add(modelMapper.map(military, MilitaryDto.class));
+        }
+        return militaryDtoList;
     }
 }
