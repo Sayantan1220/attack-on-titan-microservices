@@ -36,6 +36,12 @@ public class TitanServiceImpl implements TitanService {
     }
 
     @Override
+    public TitanDto getTitanInheritor(String inheritor) {
+        Titan getTitan = titanRepository.findByInheritor(inheritor);
+        return modelMapper.map(getTitan, TitanDto.class);
+    }
+
+    @Override
     public List<TitanDto> getAllTitans() {
         List<Titan> titanList= titanRepository.findAll();
         List<TitanDto> titanDtoList = new ArrayList<>();

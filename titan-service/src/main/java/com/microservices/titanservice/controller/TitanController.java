@@ -26,6 +26,11 @@ public class TitanController {
         return new ResponseEntity<>(titanService.getTitan(id), HttpStatus.OK);
     }
 
+    @GetMapping("/getTitanInheritor/{inheritor}")
+    public ResponseEntity<TitanDto> getTitan(@PathVariable String inheritor) {
+        return new ResponseEntity<>(titanService.getTitanInheritor(inheritor), HttpStatus.OK);
+    }
+
     @GetMapping("/getTitans")
     public ResponseEntity<List<TitanDto>> getAllMilitary() {
         return new ResponseEntity<>(titanService.getAllTitans(), HttpStatus.OK);

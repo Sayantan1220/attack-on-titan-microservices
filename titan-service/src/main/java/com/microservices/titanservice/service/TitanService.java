@@ -9,5 +9,7 @@ public interface TitanService {
 
     TitanDto getTitan(int id);
 
+    TitanDto getTitanInheritor(String inheritor);
+
     List<TitanDto> getAllTitans();
 }

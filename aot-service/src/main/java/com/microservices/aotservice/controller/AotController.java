@@ -23,12 +23,12 @@ public class AotController {
     }
 
     @GetMapping("/getAot/{id}")
-    public ResponseEntity<APIResponseDto> getMilitary(@PathVariable int id){
+    public ResponseEntity<APIResponseDto> getAot(@PathVariable int id){
         return new ResponseEntity<>(aotService.getAot(id), HttpStatus.OK);
     }
 
     @GetMapping("/getAots")
-    public ResponseEntity<List<AotDto>> getAllMilitary(){
+    public ResponseEntity<List<AotDto>> getAllAot(){
         return new ResponseEntity<>(aotService.getAllAot(), HttpStatus.OK);
     }
 

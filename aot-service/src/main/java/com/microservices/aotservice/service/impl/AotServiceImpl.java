@@ -3,10 +3,12 @@ package com.microservices.aotservice.service.impl;
 import com.microservices.aotservice.dto.APIResponseDto;
 import com.microservices.aotservice.dto.AotDto;
 import com.microservices.aotservice.dto.MilitaryDto;
+import com.microservices.aotservice.dto.TitanDto;
 import com.microservices.aotservice.entity.Aot;
 import com.microservices.aotservice.repository.AotRepository;
 import com.microservices.aotservice.service.APIClient;
 import com.microservices.aotservice.service.AotService;
+import com.microservices.aotservice.service.TitanAPIClient;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
@@ -25,6 +27,7 @@ public class AotServiceImpl implements AotService {
     private AotRepository aotRepository;
     private ModelMapper modelMapper;
     private APIClient apiClient;
+    private TitanAPIClient titanAPIClient;
 
     @Override
     public AotDto saveAot(AotDto aotDto) {
@@ -38,9 +41,11 @@ public class AotServiceImpl implements AotService {
         Aot getAot = aotRepository.findById(id).get();
         AotDto aotDto = modelMapper.map(getAot, AotDto.class);
         MilitaryDto militaryDto = apiClient.getMilitary(getAot.getMilitaryCode());
+        TitanDto titanDto = titanAPIClient.getTitanInheritor(getAot.getFirstName());
         APIResponseDto apiResponseDto = new APIResponseDto();
         apiResponseDto.setAotDto(aotDto);
         apiResponseDto.setMilitaryDto(militaryDto);
+        apiResponseDto.setTitanDto(titanDto);
         return apiResponseDto;
     }
 

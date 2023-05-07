@@ -5,4 +5,6 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface TitanRepository extends JpaRepository<Titan, Integer> {
 
+    Titan findByInheritor(String inheritor);
+
 }

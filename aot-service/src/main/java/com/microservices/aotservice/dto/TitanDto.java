@@ -9,9 +9,9 @@ import lombok.Setter;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-public class APIResponseDto {
-
-    private AotDto aotDto;
-    private MilitaryDto militaryDto;
-    private TitanDto titanDto;
+public class TitanDto {
+    private int id;
+    private String titanName;
+    private String titanDescription;
+    private String inheritor;
 }
